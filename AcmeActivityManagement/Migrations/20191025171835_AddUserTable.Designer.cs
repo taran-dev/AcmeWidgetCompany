@@ -4,14 +4,16 @@ using AcmeActivityManagement.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AcmeActivityManagement.Migrations
 {
     [DbContext(typeof(AcmeDbContext))]
-    partial class AcmeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191025171835_AddUserTable")]
+    partial class AddUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
