@@ -36,6 +36,9 @@ namespace AcmeActivityManagement.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] UserResource userResource)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             var user = this.mapper.Map<UserResource, User>(userResource);
             user.CreatedOn = DateTime.Now;
             user.ModifiedOn = DateTime.Now;
