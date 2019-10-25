@@ -3,6 +3,8 @@ using AcmeActivityManagement.EntityFramework;
 using AcmeActivityManagement.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace AcmeActivityManagement.Controllers
 {
+    [Route("/api/users")]
     public class UserController : ControllerBase
     {
         private readonly AcmeDbContext acmeDbContext;
@@ -21,7 +24,16 @@ namespace AcmeActivityManagement.Controllers
             this.mapper = mapper;
         }
 
-        [HttpPost("/api/users")]
+        [HttpGet]
+        public async Task<IEnumerable<UserResource>> GetAllUsers()
+        {
+            var users = await this.acmeDbContext.Users.ToListAsync();
+            var output = mapper.Map<List<User>, List<UserResource>>(users);
+
+            return output;
+        }
+
+        [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] UserResource userResource)
         {
             var user = this.mapper.Map<UserResource, User>(userResource);
