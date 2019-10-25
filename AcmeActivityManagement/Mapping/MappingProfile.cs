@@ -1,4 +1,5 @@
 ﻿using AcmeActivityManagement.Controllers.Resources;
+using AcmeActivityManagement.EntityFramework;
 using AcmeActivityManagement.Models;
 using AutoMapper;
 using System;
@@ -12,7 +13,13 @@ namespace AcmeActivityManagement.Mapping
     {
         public MappingProfile()
         {
+            //Mapping API Resource to Domain Model
             CreateMap<Activity, ActivityResource>();
+            CreateMap<User, UserResource>();
+
+            //Mapping Domain Model to API Resource
+            CreateMap<UserResource, User>();
+            //    .ForMember(u => u.Activity, opt => opt.MapFrom(ur => new AcmeDbContext().Activities.Find(ur.ActivityId)));
         }
     }
 }
