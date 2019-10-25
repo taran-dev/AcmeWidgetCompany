@@ -1,4 +1,5 @@
-﻿using AcmeActivityManagement.EntityFramework;
+﻿using AcmeActivityManagement.Controllers.Resources;
+using AcmeActivityManagement.EntityFramework;
 using AcmeActivityManagement.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -21,9 +22,23 @@ namespace AcmeActivityManagement.Controllers
         }
 
         [HttpPost("/api/users")]
-        public IActionResult CreateUser(User user)
+        public async Task<IActionResult> CreateUser([FromBody] UserResource userResource)
         {
-            return Ok(user);
+            var user = this.mapper.Map<UserResource, User>(userResource);
+            user.CreatedOn = DateTime.Now;
+            user.ModifiedOn = DateTime.Now;
+            user.IsDeleted = false;
+
+            //Get Activity from input ActivityId
+            var activity = await this.acmeDbContext.Activities.FindAsync(userResource.ActivityId);
+            user.Activity = activity;
+
+            this.acmeDbContext.Add(user);
+            await this.acmeDbContext.SaveChangesAsync();
+
+            var result = this.mapper.Map<User, UserResource>(user);
+            return Ok(result);
+
         }
 
     }
