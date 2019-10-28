@@ -34,11 +34,15 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\components\userActivity\userActivity-signup.component.ts" />
     <None Remove="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
+    <None Remove="ClientApp\src\app\shared\models\activity.model.ts" />
+    <None Remove="ClientApp\src\app\shared\models\user.model.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity-signup.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\activity.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\models\user.model.ts" />
   </ItemGroup>
 
   <ItemGroup>
