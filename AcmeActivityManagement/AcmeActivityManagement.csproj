@@ -32,13 +32,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\userActivity\userActivity-signup.component.ts" />
-    <None Remove="ClientApp\src\app\userActivity\userActivity.module.ts" />
+    <None Remove="ClientApp\src\app\components\userActivity\userActivity-signup.component.ts" />
+    <None Remove="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\userActivity\userActivity-signup.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\userActivity\userActivity.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity-signup.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\services\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
