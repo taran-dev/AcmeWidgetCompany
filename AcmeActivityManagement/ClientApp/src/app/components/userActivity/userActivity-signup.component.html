@@ -1,1 +1,49 @@
 <h2>Activity Sign Up</h2>
+<br />
+<form #userActivityForm="ngForm" (submit)="submitForm(userActivityForm.value)">
+  <div class="row">
+    <label for="firstName" class="col-sm-2">First Name</label>
+    <div class="col-sm-4">
+      <input name="firstName" type="text" class="form-control" ngModel>
+    </div>
+    <label for="lastName" class="col-sm-2">Last Name</label>
+    <div class="col-sm-4">
+      <input name="lastName" type="text" class="form-control" ngModel>
+    </div>
+  </div> <!-- First Name, Last Name -->
+
+  <br />
+
+  <div class="row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-4">
+      <input name="email" type="text" class="form-control" ngModel>
+    </div>
+  </div> <!-- Email -->
+
+  <br />
+
+  <div class="row">
+    <label class="col-sm-2 col-form-label">Activity</label>
+    <div class="col-sm-4">
+      <select class="browser-default custom-select" name="activity" ngModel>
+        <!-- <option [value]="0">--Select Activity--</option> --> <!-- TODO -->
+        <option *ngFor="let activity of activities" [value]="activity.id">{{activity.name}}</option>
+      </select>
+    </div>
+  </div> <!-- Activity -->
+
+  <br />
+
+  <div class="row">
+    <label for="email" class="col-sm-2 col-form-label">Comments</label>
+    <div class="col-sm-4">
+      <textarea name="comment" type="text" class="form-control" ngModel></textarea>
+    </div>
+  </div> <!-- Email -->
+
+  <br />
+
+  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+  
+</form>
