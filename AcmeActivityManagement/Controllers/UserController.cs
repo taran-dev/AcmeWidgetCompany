@@ -27,7 +27,7 @@ namespace AcmeActivityManagement.Controllers
         [HttpGet]
         public async Task<IEnumerable<UserResource>> GetAllUsers()
         {
-            var users = await this.acmeDbContext.Users.ToListAsync();
+            var users = await this.acmeDbContext.Users.Include(x => x.Activity).ToListAsync();
             var output = mapper.Map<List<User>, List<UserResource>>(users);
 
             return output;
