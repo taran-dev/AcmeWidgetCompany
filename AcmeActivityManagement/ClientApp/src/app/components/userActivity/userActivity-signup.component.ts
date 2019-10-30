@@ -20,7 +20,7 @@ export class UserActivitySignUpComponent implements OnInit {
             self.activities = result;
             console.log(self.activities);
         });
-        
+
     }
 
     public submitForm(form: any) {
