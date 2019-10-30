@@ -1,49 +1,72 @@
-<h2>Activity Sign Up</h2>
-<br />
+
 <form #userActivityForm="ngForm" (submit)="submitForm(userActivityForm.value)">
-  <div class="row">
-    <label for="firstName" class="col-sm-2">First Name</label>
-    <div class="col-sm-4">
-      <input name="firstName" type="text" class="form-control" ngModel>
+
+  <div class="container-fluid w-50">
+
+    <div class="form-group">
+      <div class="text-center">
+        <h2>Activity Sign Up</h2>
+      </div>
     </div>
-    <label for="lastName" class="col-sm-2">Last Name</label>
-    <div class="col-sm-4">
-      <input name="lastName" type="text" class="form-control" ngModel>
-    </div>
-  </div> <!-- First Name, Last Name -->
 
-  <br />
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user"></i>
+          </span>
+        </div>
+        <input name="firstName" type="text" class="form-control" placeholder="First Name" ngModel required>
+      </div>
+    </div> <!-- First Name -->
 
-  <div class="row">
-    <label for="email" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-4">
-      <input name="email" type="text" class="form-control" ngModel>
-    </div>
-  </div> <!-- Email -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-user"></i>
+          </span>
+        </div>
+        <input name="lastName" type="text" class="form-control" placeholder="Last Name" ngModel required>
+      </div>
+    </div> <!-- Last Name -->
 
-  <br />
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-paper-plane"></i>
+          </span>
+        </div>
+        <input name="email" type="text" class="form-control" placeholder="Email" ngModel required>
+      </div>
+    </div> <!-- Email -->
 
-  <div class="row">
-    <label class="col-sm-2 col-form-label">Activity</label>
-    <div class="col-sm-4">
-      <select class="browser-default custom-select" name="activity" ngModel>
-        <!-- <option [value]="0">--Select Activity--</option> --> <!-- TODO -->
-        <option *ngFor="let activity of activities" [value]="activity.id">{{activity.name}}</option>
-      </select>
-    </div>
-  </div> <!-- Activity -->
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Activity</span>
+        </div>
+        <select class="browser-default custom-select" name="activity" ngModel required>
+          <!-- <option [value]="0">--Select Activity--</option> --> <!-- TODO -->
+          <option *ngFor="let activity of activities" [value]="activity.id">{{activity.name}}</option>
+        </select>
+      </div>
+    </div> <!-- Activity -->
 
-  <br />
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-comment"></i>
+          </span>
+        </div>
+        <textarea name="comment" type="text" class="form-control" placeholder="Comments" ngModel required></textarea>
+      </div>
+    </div> <!-- Comments -->
 
-  <div class="row">
-    <label for="email" class="col-sm-2 col-form-label">Comments</label>
-    <div class="col-sm-4">
-      <textarea name="comment" type="text" class="form-control" ngModel></textarea>
-    </div>
-  </div> <!-- Email -->
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="!userActivityForm.valid">Submit</button>
 
-  <br />
+  </div>
 
-  <button type="submit" class="btn btn-primary btn-block">Submit</button>
-  
 </form>
