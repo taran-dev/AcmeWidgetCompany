@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\userActivity\userActivity-list.component.ts" />
     <None Remove="ClientApp\src\app\components\userActivity\userActivity-signup.component.ts" />
     <None Remove="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
     <None Remove="ClientApp\src\app\shared\models\activity.model.ts" />
@@ -39,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity-signup.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\activity.model.ts" />
@@ -47,6 +49,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\services\" />
+    <Folder Include="ClientApp\src\assets\activities\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

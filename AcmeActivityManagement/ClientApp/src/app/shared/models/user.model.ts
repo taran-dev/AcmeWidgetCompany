@@ -4,5 +4,6 @@ export class User {
     lastName: string;
     email: string;
     activityId: number;
+    activityName: string;
     comment: string;
 }

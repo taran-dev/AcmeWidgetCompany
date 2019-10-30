@@ -5,6 +5,10 @@ a {
   color: #0366d6;
 }
 
+.container {
+  font-family: Open Sans,sans-serif;
+}
+
 code {
   color: #e01a76;
 }
@@ -13,4 +17,36 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+.img-icon {
+  width: 30px;
+  padding: 5px 5px 5px 0px;
+}
+
+.table {
+  margin: 0 !important;
+}
+
+.table td {
+  white-space: nowrap !important;
+}
+
+thead.bg-primary {
+  color: white !important;
+}
+
+.table thead th {
+  font-size: .75rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.table thead td {
+  font-size: .75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

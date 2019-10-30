@@ -1,0 +1,34 @@
+<div class="text-center">
+  <h3>Registered Users</h3>
+</div>
+
+<hr />
+
+<div class="row card">
+  <div class="table-responsive">
+    <table class="table table-hover">
+
+      <thead class="bg-primary">
+        <tr>
+          <th scope="col" class="col-auto">Name</th>
+          <th scope="col" class="col-auto">Email</th>
+          <th scope="col" class="col-auto">Activity</th>
+          <th scope="col" class="col-auto">Comments</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let user of users">
+          <th scope="row">{{user.firstName}}&nbsp;{{user.lastName}}</th>
+          <td>{{user.email}}</td>
+          <td>
+            <img alt="img" src="../assets/activities/activity_{{user.activityId}}.png" class="img-icon" />
+            <span>{{user.activityName}}</span>
+          </td>
+          <td>{{user.comment}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
