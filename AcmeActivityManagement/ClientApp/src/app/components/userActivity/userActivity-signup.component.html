@@ -1,5 +1,5 @@
 
-<form #userActivityForm="ngForm" (submit)="submitForm(userActivityForm.value)">
+<form [formGroup]="userActivityForm" (ngSubmit)="submitForm(userActivityForm.value)">
 
   <div class="container-fluid w-50">
 
@@ -16,7 +16,7 @@
             <i class="fa fa-user"></i>
           </span>
         </div>
-        <input name="firstName" type="text" class="form-control" placeholder="First Name" ngModel required>
+        <input name="firstName" type="text" class="form-control" placeholder="First Name" formControlName="firstName" required>
       </div>
     </div> <!-- First Name -->
 
@@ -27,7 +27,7 @@
             <i class="fa fa-user"></i>
           </span>
         </div>
-        <input name="lastName" type="text" class="form-control" placeholder="Last Name" ngModel required>
+        <input name="lastName" type="text" class="form-control" placeholder="Last Name" formControlName="lastName" required>
       </div>
     </div> <!-- Last Name -->
 
@@ -38,7 +38,7 @@
             <i class="fa fa-paper-plane"></i>
           </span>
         </div>
-        <input name="email" type="text" class="form-control" placeholder="Email" ngModel required>
+        <input name="email" type="email" class="form-control" placeholder="Email" formControlName="email" required>
       </div>
     </div> <!-- Email -->
 
@@ -47,7 +47,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Activity</span>
         </div>
-        <select class="browser-default custom-select" name="activity" ngModel required>
+        <select class="browser-default custom-select" name="activitySelect" formControlName="activitySelect" required>
           <!-- <option [value]="0">--Select Activity--</option> --> <!-- TODO -->
           <option *ngFor="let activity of activities" [value]="activity.id">{{activity.name}}</option>
         </select>
@@ -61,7 +61,7 @@
             <i class="fa fa-comment"></i>
           </span>
         </div>
-        <textarea name="comment" type="text" class="form-control" placeholder="Comments" ngModel required></textarea>
+        <textarea name="comment" type="text" class="form-control" placeholder="Comments" formControlName="comment" required></textarea>
       </div>
     </div> <!-- Comments -->
 
