@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -20,6 +20,7 @@ import { UserService } from '../../services/user.service';
     imports: [
         HttpClientModule,
         FormsModule,
+        ReactiveFormsModule,
         CommonModule,
         RouterModule.forChild([
             { path: '', component: UserActivityComponent },

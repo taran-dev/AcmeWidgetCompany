@@ -11,10 +11,10 @@ export class ActivityService {
     private activitiesUrl: string = "/api/activities"; // URL to web api
 
     //Get Activities from Server
-    getActivities() : Observable<Activity> {
+    getActivities() : Observable<Activity[]> {
         var self = this;
 
-        return self.http.get<Activity>(self.activitiesUrl)
+        return self.http.get<Activity[]>(self.activitiesUrl)
             .pipe(
 
             ); //TODO: Catch Error
