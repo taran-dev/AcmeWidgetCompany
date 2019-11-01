@@ -1,0 +1,17 @@
+<div class="container-fluid w-50">
+  <br />
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">
+      <h5 class="text-center">Select Activity</h5>
+    </a>
+    <span *ngFor="let activity of activities">
+      
+      <a routerLink="/useractivity/signup/{{activity.id}}" class="list-group-item list-group-item-action">
+        <img alt="img" src="../assets/activities/activity_{{activity.id}}.png" class="img-icon" />
+        &nbsp;
+        {{activity.name}}
+      </a>
+    </span>
+  </div>
+
+</div>

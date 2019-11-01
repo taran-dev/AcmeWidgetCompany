@@ -50,3 +50,12 @@ thead.bg-primary {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+.home-title {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.container-home {
+  padding: 10% !important;
+}

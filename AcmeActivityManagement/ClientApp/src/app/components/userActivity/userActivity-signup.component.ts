@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivityService } from '../../services/activity.service';
 import { UserService } from '../../services/user.service';
 import { User } from '../../shared/models/user.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'app-userActivity-signup',
@@ -14,13 +15,22 @@ export class UserActivitySignUpComponent implements OnInit {
     activities: any;
     user: User;
     userActivityForm;
+    activityId: number;
+    activityName: string = "";
 
     ngOnInit() {
         var self = this;
+        self.user = new User();
+
+        var param = self.route.snapshot.paramMap.get("activityId");
+        self.activityId = parseInt(param);
 
         self.activityService.getActivities().subscribe(result => {
             self.activities = result;
-            console.log(self.activities);
+
+            var item = result.filter(x => x.id == self.activityId);
+            self.user.activityName = item[0].name;
+            self.activityName = item[0].name;
         });
 
     }
@@ -34,11 +44,14 @@ export class UserActivitySignUpComponent implements OnInit {
         self.user.firstName = formData.firstName;
         self.user.lastName = formData.lastName;
         self.user.email = formData.email;
-        self.user.activityId = parseInt(formData.activitySelect);
+        self.user.activityId = self.activityId;
         self.user.comment = formData.comment;
 
         self.userService.addUserActivity(self.user).subscribe(result => {
             console.log(result);
+
+            self.router.navigateByUrl('/useractivity/list');
+
         });
 
         self.userActivityForm.reset();
@@ -48,6 +61,8 @@ export class UserActivitySignUpComponent implements OnInit {
         private activityService: ActivityService,
         private userService: UserService,
         private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router
     ) {
 
         var self = this;
