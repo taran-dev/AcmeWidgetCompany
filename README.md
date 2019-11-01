@@ -1,5 +1,5 @@
 # Acme Activity Management
-The Acme Widget Company employee activity squad has random fun events throughout the year. They have asked Technical Solutions to develop a simple Activity Sign Up web application.
+The Acme Widget Company employee activity squad has random fun events throughout the year. They require a simple Activity Sign Up web application to be developed.
 
 This project is an example of the MVC architecture, along with using new technologies and best practices.
 
