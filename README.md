@@ -18,6 +18,7 @@ This project is an example of the MVC architecture, along with using new technol
 * RESTful APIs
 * Karma/Jasmine Unit Testing
 * Gitflow Workflow
+* SQL Server 2017
 
 ---
 ### Application Screenshots:
