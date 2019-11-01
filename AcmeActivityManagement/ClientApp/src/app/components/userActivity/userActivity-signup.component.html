@@ -1,4 +1,4 @@
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <form [formGroup]="userActivityForm" (ngSubmit)="submitForm(userActivityForm.value)">
 
   <div class="container-fluid w-50">
@@ -45,14 +45,24 @@
     <div class="form-group">
       <div class="input-group">
         <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-child"></i>
+          </span>
+        </div>
+        <input name="activitySelect" type="text" class="form-control" placeholder="Activity" formControlName="activitySelect" value="{{activityName}}" disabled required>
+      </div>
+    </div>
+    <!--<div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
           <span class="input-group-text">Activity</span>
         </div>
         <select class="browser-default custom-select" name="activitySelect" formControlName="activitySelect" required>
-          <!-- <option [value]="0">--Select Activity--</option> --> <!-- TODO -->
           <option *ngFor="let activity of activities" [value]="activity.id">{{activity.name}}</option>
         </select>
       </div>
-    </div> <!-- Activity -->
+    </div>-->
+    <!-- Activity -->
 
     <div class="form-group">
       <div class="input-group">

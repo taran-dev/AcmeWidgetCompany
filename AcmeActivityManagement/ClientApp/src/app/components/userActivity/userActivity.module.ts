@@ -10,12 +10,14 @@ import { UserActivityListComponent } from './userActivity-list.component';
 
 import { ActivityService } from '../../services/activity.service';
 import { UserService } from '../../services/user.service';
+import { UserActivityActivitySelectComponent } from './userActivity-activityselect.component';
 
 @NgModule({
     declarations: [
         UserActivityComponent,
         UserActivitySignUpComponent,
-        UserActivityListComponent
+        UserActivityListComponent,
+        UserActivityActivitySelectComponent
     ],
     imports: [
         HttpClientModule,
@@ -24,8 +26,9 @@ import { UserService } from '../../services/user.service';
         CommonModule,
         RouterModule.forChild([
             { path: '', component: UserActivityComponent },
-            { path: 'signup', component: UserActivitySignUpComponent },
+            { path: 'signup/:activityId', component: UserActivitySignUpComponent },
             { path: 'list', component: UserActivityListComponent },
+            { path: 'activity', component: UserActivityActivitySelectComponent },
         ])
     ],
     providers: [ActivityService, UserService],

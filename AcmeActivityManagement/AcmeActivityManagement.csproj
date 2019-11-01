@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\userActivity\userActivity-activityselect.component.ts" />
     <None Remove="ClientApp\src\app\components\userActivity\userActivity-list.component.ts" />
     <None Remove="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
     <None Remove="ClientApp\src\app\shared\models\activity.model.ts" />
@@ -39,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity-activityselect.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\userActivity\userActivity.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\activity.model.ts" />
